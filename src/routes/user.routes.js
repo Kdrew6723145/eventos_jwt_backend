@@ -21,7 +21,7 @@ router.get('/login/participantes',getNParticipantes)
 
 
 //Test
-router.get('/ping',getPing)
+router.post('/ping',getPing)
 
 
 export default router;
