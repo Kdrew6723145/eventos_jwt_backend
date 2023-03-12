@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import {getParticipante,getControl,getSuperU,getExpositor,getCasual,getNParticipantes} from "../controllers/user_authController.js";
+import {getParticipante,getControl,getSuperU,getExpositor,getCasual,getNParticipantes,getPing} from "../controllers/user_authController.js";
 
 const router = Router()
 
@@ -19,6 +19,9 @@ router.get('/casual',getCasual)
 
 router.get('/login/participantes',getNParticipantes)
 
+
+//Test
+router.get('/ping',getPing)
 
 
 export default router;

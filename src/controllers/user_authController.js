@@ -2,6 +2,12 @@ import {pool} from "../database.js"
 import {enc_use} from "../models/methodEncypt.js"
 import jwt from "jsonwebtoken"
 
+export const getPing=async (req, res) => {
+    res.send('pong')
+
+
+}
+
 export const getParticipante=async (req, res) => {
 
     const nick=req.body.nick
