@@ -10,7 +10,7 @@ export const getPing=async (req, res) => {
 
 export const getParticipante=async (req, res) => {
 
-    const nick=req.body.nick
+/*     const nick=req.body.nick
     const clave=req.body.clave
 
     const [rows]=await pool.query(
@@ -23,13 +23,6 @@ export const getParticipante=async (req, res) => {
         const x=await enc_use(rows[0].clave)
         rows[0].clave=x
 
-       /*  res.send({
-            ci: rows[0].ci_par,
-            nick:rows[0].nick,
-            clave: rows[0].clave,
-            fotografia: rows[0].fotografia
-        }) */
-
         res.send(rows[0])
 
 
@@ -37,7 +30,9 @@ export const getParticipante=async (req, res) => {
         return res.status(404).json({error:'Usuario no encontrado'})
     }
 
-    console.log(rows)
+    console.log(rows) */
+
+    res.send(req.body)
 
 }
 
