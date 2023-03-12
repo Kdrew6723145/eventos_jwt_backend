@@ -4,17 +4,21 @@ import {getParticipante,getControl,getSuperU,getExpositor,getCasual,getNParticip
 
 const router = Router()
 
-router.get('/login/participante/:nick',getParticipante)
+
+//Rutas para consultar tipo de usuario
+router.post('/login/participante/',getParticipante)
+
+router.post('/login/control/',getControl)
+
+router.post('/login/expositor/',getExpositor)
+
+router.post('/login/superU/',getSuperU)
+
+router.get('/casual',getCasual)
+//
 
 router.get('/login/participantes',getNParticipantes)
 
-router.get('/login/control',getControl)
-
-router.get('/login/superU',getSuperU)
-
-router.get('/login/expositor',getExpositor)
-
-router.get('/casual',getCasual)
 
 
 export default router;

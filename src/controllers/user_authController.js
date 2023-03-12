@@ -4,22 +4,27 @@ import jwt from "jsonwebtoken"
 
 export const getParticipante=async (req, res) => {
 
-    const nick=req.params.nick
+    const nick=req.body.nick
+    const clave=req.body.clave
 
     const [rows]=await pool.query(
-        'SELECT ci_par,nick,clave,fotografia FROM participante where nick =?',
-        [req.params.nick]	
+        'SELECT ci_par,CONCAT(nombres," ", apellidos) as nombre_comp,email,nick,clave,numero FROM participante where nick =? and clave=?',
+        [nick,clave]	
     )
+
+    console.log(rows,'aaa')
     if(rows.length>0){
         const x=await enc_use(rows[0].clave)
         rows[0].clave=x
 
-        res.send({
+       /*  res.send({
             ci: rows[0].ci_par,
             nick:rows[0].nick,
             clave: rows[0].clave,
             fotografia: rows[0].fotografia
-        })
+        }) */
+
+        res.send(rows[0])
 
 
     }else{
@@ -37,10 +42,10 @@ export const getNParticipantes=async (req, res) => {
     )
     
     if(result.length>0){
-        console.log(result);
+        //console.log(result);
         res.json(result)
     }else{
-        console.log('bbb')
+        res.json({error:'Error 404'})
     }
 
 
