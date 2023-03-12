@@ -10,7 +10,7 @@ export const getPing=async (req, res) => {
 
 export const getParticipante=async (req, res) => {
 
-/*     const nick=req.body.nick
+  const nick=req.body.nick
     const clave=req.body.clave
 
     const [rows]=await pool.query(
@@ -30,7 +30,7 @@ export const getParticipante=async (req, res) => {
         return res.status(404).json({error:'Usuario no encontrado'})
     }
 
-    console.log(rows) */
+    console.log(rows)
 
     res.send(req.body)
 
