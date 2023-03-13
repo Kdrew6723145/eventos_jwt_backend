@@ -52,47 +52,77 @@ export const getNParticipantes=async (req, res) => {
 }
 
 export const getExpositor=async (req, res) => {
-    const [result]=await pool.query(
-        "SELECT ci_par,nick,clave FROM expositor "
+    const nick=req.body.nick
+    const clave=req.body.clave
+
+    const [rows]=await pool.query(
+        'SELECT ci_exp,CONCAT(nombre," ", apellido) as nombre_comp,grado_academico,email,nick,clave,celular FROM expositor where nick =? and clave=?',
+        [nick,clave]	
     )
 
-    console.log(result)
+    if(rows.length>0){
+        //const x=await enc_use(rows[0].clave)
+        //rows[0].clave=x
+        res.send(rows[0])
 
-    res.json({
-        ci_par: result.ci_par,
-        nick: result.nick,
-        clave: result.clave,
-    })
+
+    }else{
+        return res.status(404).json({error:'Usuario no encontrado'})
+    }
+
+    console.log(rows)
+
+    //res.send(req.body)
 }
 
 export const getControl=async (req, res) => {
-    const [result]=await pool.query(
-        "SELECT ci_par,nick,clave,fotografia FROM participante "
+    const nick=req.body.nick
+    const clave=req.body.clave
+
+    const [rows]=await pool.query(
+        'SELECT ci_control,CONCAT(nombre," ", apellido) as nombre_comp,nick,clave FROM control where nick =? and clave=?',
+        [nick,clave]	
     )
 
-    console.log(result)
+    console.log(rows,'aaa')
+    if(rows.length>0){
+        //const x=await enc_use(rows[0].clave)
+        //rows[0].clave=x
+        res.send(rows[0])
 
-    res.json({
-        ci_par: result.ci_par,
-        nick: result.nick,
-        clave: result.clave,
-        fotografia: result.fotografia
-    })
+
+    }else{
+        return res.status(404).json({error:'Usuario no encontrado'})
+    }
+
+    console.log(rows)
+
+    //res.send(req.body)
 }
 
 export const getCasual=async (req, res) => {
-    const [result]=await pool.query(
-        "SELECT ci_par,nick,clave,fotografia FROM participante "
+    const nick=req.body.nick
+    const clave=req.body.clave
+
+    const [rows]=await pool.query(
+        'SELECT ci_par,CONCAT(nombres," ", apellidos) as nombre_comp,email,nick,clave,numero FROM participante where nick =? and clave=?',
+        [nick,clave]	
     )
 
-    console.log(result)
+    console.log(rows,'aaa')
+    if(rows.length>0){
+        //const x=await enc_use(rows[0].clave)
+        //rows[0].clave=x
+        res.send(rows[0])
 
-    res.json({
-        ci_par: result.ci_par,
-        nick: result.nick,
-        clave: result.clave,
-        fotografia: result.fotografia
-    })
+
+    }else{
+        return res.status(404).json({error:'Usuario no encontrado'})
+    }
+
+    console.log(rows)
+
+    //res.send(req.body)
 }
 
 export const getSuperU=async (req, res) => {
