@@ -2,6 +2,7 @@ import { Router } from "express";
 
 import {getParticipante,getControl,getSuperU,getExpositor,getCasual,getNParticipantes,getPing} from "../controllers/user_authController.js";
 
+
 const router = Router()
 
 
@@ -21,8 +22,7 @@ router.get('/login/participantes/',getNParticipantes)
 
 
 
-//Ruta de los eventos
-router.post('/evento/',getEvento)
+
 
 //Test
 router.post('/ping',getPing)

@@ -1,17 +1,16 @@
 import {pool} from "../database.js"
 
 
-export const getParticipante=async (req, res) => {
+export const getEvento=async (req, res) => {
 
     const nick=req.body.nick
       const clave=req.body.clave
   
       const [rows]=await pool.query(
-          'SELECT ci_par,CONCAT(nombres," ", apellidos) as nombre_comp,email,nick,clave,numero FROM participante where nick =? and clave=?',
-          [nick,clave]	
+          'SELECT * FROM evento'
       )
   
-      console.log(rows,'aaa')
+      console.log(rows)
       if(rows.length>0){
           //const x=await enc_use(rows[0].clave)
           //rows[0].clave=x
@@ -19,7 +18,7 @@ export const getParticipante=async (req, res) => {
   
   
       }else{
-          return res.status(404).json({error:'Usuario no encontrado'})
+          return res.status(404).json({error:'No hay eventos disponibles'})
       }
   
       console.log(rows)
