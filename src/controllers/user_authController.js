@@ -80,7 +80,7 @@ export const getExpositor=async (req, res) => {
 
 
     }else{
-        return res.status(404).json({error:'Usuario no encontrado'})
+        return res.send({error:'Usuario no encontrado'})
     }
 
     console.log(rows)
@@ -106,7 +106,7 @@ export const getControl=async (req, res) => {
 
 
     }else{
-        return res.status(404).json({error:'Usuario no encontrado'})
+        return res.send({error:'Usuario no encontrado'})
     }
 
     console.log(rows)
