@@ -15,10 +15,14 @@ router.post('/login/expositor/',getExpositor)
 router.post('/login/superU/',getSuperU)
 
 router.get('/casual',getCasual)
-//
+//Ruuta obtener todos los participantes
 
 router.get('/login/participantes',getNParticipantes)
 
+
+
+//Ruta de los eventos
+router.post('/evento/',getEvento)
 
 //Test
 router.post('/ping',getPing)
