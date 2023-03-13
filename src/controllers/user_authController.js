@@ -45,6 +45,7 @@ export const getParticipante=async (req, res) => {
 
 //Consulta todos los participantes con sus datos
 export const getNParticipantes=async (req, res) => {
+    const users=req.body
     const [result]=await pool.query(
         'SELECT ci_par,nick,clave,fotografia FROM participante'
     )

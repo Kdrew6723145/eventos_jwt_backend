@@ -17,7 +17,7 @@ router.post('/login/superU/',getSuperU)
 router.get('/casual',getCasual)
 //Ruuta obtener todos los participantes
 
-router.get('/login/participantes',getNParticipantes)
+router.get('/login/participantes/',getNParticipantes)
 
 
 
