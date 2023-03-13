@@ -22,7 +22,7 @@ export const getParticipante=async (req, res) => {
     const clave=req.body.clave
 
     const [rows]=await pool.query(
-        'SELECT ci_par,CONCAT(nombres," ----", apellidos) as nombre_comp,email,nick,clave,numero FROM participante where nick =? and clave=?',
+        'SELECT ci_par,CONCAT(nombres," -----", apellidos) as nombre_comp,email,nick,clave,numero FROM participante where nick =? and clave=?',
         [nick,clave]	
     )
 
@@ -56,6 +56,8 @@ export const getNParticipantes=async (req, res) => {
     }else{
         res.json({error:'Error 404'})
     }
+
+    console.log(result)
 
 
 }
