@@ -20,9 +20,8 @@ export const getParticipante=async (req, res) => {
 
     console.log(rows,'aaa')
     if(rows.length>0){
-        const x=await enc_use(rows[0].clave)
-        rows[0].clave=x
-
+        //const x=await enc_use(rows[0].clave)
+        //rows[0].clave=x
         res.send(rows[0])
 
 
@@ -32,7 +31,7 @@ export const getParticipante=async (req, res) => {
 
     console.log(rows)
 
-    res.send(req.body)
+    //res.send(req.body)
 
 }
 
