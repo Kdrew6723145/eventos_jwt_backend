@@ -172,7 +172,9 @@ export const getNControl=async (req, res) => {
     
     if(result.length>0){
         //console.log(result);
-        res.json(result)
+        res.json({
+            "control": result
+        })
     }else{
         res.json({error:'Error 404'})
     }
@@ -193,7 +195,9 @@ export const getNExpositor=async (req, res) => {
     
     if(result.length>0){
         //console.log(result);
-        res.json(result)
+        res.json({
+            "expositor": result
+        })
     }else{
         res.json({error:'Error 404'})
     }
