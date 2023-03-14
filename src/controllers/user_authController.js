@@ -167,7 +167,7 @@ export const getNParticipantes=async (req, res) => {
 export const getNControl=async (req, res) => {
     const users=req.body
     const [result]=await pool.query(
-        'SELECT ci_par,nick,clave FROM control'
+        'SELECT ci_control,nick,clave FROM control'
     )
     
     if(result.length>0){
@@ -190,7 +190,7 @@ export const getNControl=async (req, res) => {
 export const getNExpositor=async (req, res) => {
     const users=req.body
     const [result]=await pool.query(
-        'SELECT ci_par,nick,clave,fotografia FROM expositor'
+        'SELECT ci_exp,nick,clave FROM expositor'
     )
     
     if(result.length>0){
