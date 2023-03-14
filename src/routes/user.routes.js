@@ -19,8 +19,8 @@ router.get('/casual',getCasual)
 //Ruuta obtener todos los participantes, usuarios control y expositores
 
 router.get('/login/participantes/',getNParticipantes)
-router.get('/login/participantes/',getNControl)
-router.get('/login/participantes/',getNExpositor)
+router.get('/login/controles/',getNControl)
+router.get('/login/expositores/',getNExpositor)
 
 
 
