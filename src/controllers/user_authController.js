@@ -43,26 +43,6 @@ export const getParticipante=async (req, res) => {
 
 }
 
-//Consulta todos los participantes con sus datos
-export const getNParticipantes=async (req, res) => {
-    const users=req.body
-    const [result]=await pool.query(
-        'SELECT ci_par,nick,clave,fotografia FROM participante'
-    )
-    
-    if(result.length>0){
-        //console.log(result);
-        res.json(result)
-    }else{
-        res.json({error:'Error 404'})
-    }
-
-    console.log(result)
-
-
-}
-
-
 //Consulta un expositor con nick y clave
 export const getExpositor=async (req, res) => {
     const nick=req.body.nick
@@ -157,4 +137,68 @@ export const getSuperU=async (req, res) => {
         clave: result.clave,
         fotografia: result.fotografia
     })
+}
+
+
+
+//Consulta todos los participantes con sus datos
+export const getNParticipantes=async (req, res) => {
+    const users=req.body
+    const [result]=await pool.query(
+        'SELECT ci_par,nick,clave,fotografia FROM participante'
+    )
+    
+    if(result.length>0){
+        //console.log(result);
+        res.json({
+            "participante": result
+        })
+    }else{
+        res.json({error:'Error 404'})
+    }
+
+    console.log(result)
+
+
+}
+
+
+//Consulta todos los participantes con sus datos
+export const getNControl=async (req, res) => {
+    const users=req.body
+    const [result]=await pool.query(
+        'SELECT ci_par,nick,clave FROM control'
+    )
+    
+    if(result.length>0){
+        //console.log(result);
+        res.json(result)
+    }else{
+        res.json({error:'Error 404'})
+    }
+
+    console.log(result)
+
+
+}
+
+
+
+//Consulta todos los participantes con sus datos
+export const getNExpositor=async (req, res) => {
+    const users=req.body
+    const [result]=await pool.query(
+        'SELECT ci_par,nick,clave,fotografia FROM expositor'
+    )
+    
+    if(result.length>0){
+        //console.log(result);
+        res.json(result)
+    }else{
+        res.json({error:'Error 404'})
+    }
+
+    console.log(result)
+
+
 }
