@@ -44,10 +44,9 @@ export const getParticipante = async (req, res) => {
       }
     }
   }
-  if(c_control.length > 0 && c_expo.length > 0 && c_partic.length > 0) { 
-    res.send({})
+  if (c_control.length == 0 && c_expo.length == 0 && c_partic.length == 0) {
+    res.send({});
   }
-     
 
   return res.send({});
   console.log(rows);
