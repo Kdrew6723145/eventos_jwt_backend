@@ -14,43 +14,34 @@ export const getParticipante = async (req, res) => {
   const clave = req.body.clave;
 
   const [c_partic] = await pool.query(
-    'SELECT ci_par,CONCAT(nombres," ", apellidos) as nombre_comp,email,nick,clave,numero FROM participante where nick =? and clave=?',
+    'SELECT ci_par,CONCAT(nombres," ", apellidos) as nombre_comp,email,nick,clave,numero,CONCAT("participante") as rol FROM participante where nick =? and clave=?',
     [nick, clave]
   );
 
   const [c_expo] = await pool.query(
-    'SELECT ci_exp,CONCAT(nombre," ", apellido) as nombre_comp,grado_academico,email,nick,clave,celular FROM expositor where nick =? and clave=?',
+    'SELECT ci_exp,CONCAT(nombre," ", apellido) as nombre_comp,grado_academico,email,nick,clave,celular,CONCAT("expositor") as rol FROM expositor where nick =? and clave=?',
     [nick, clave]
   );
 
   const [c_control] = await pool.query(
-    'SELECT ci_control,CONCAT(nombre," ", apellido) as nombre_comp,nick,clave FROM control where nick =? and clave=?',
+    'SELECT ci_control,CONCAT(nombre," ", apellido) as nombre_comp,nick,clave, CONCAT("control") as rol FROM control where nick =? and clave=?',
     [nick, clave]
   );
 
   if (c_partic.length > 0) {
-    //const x=await enc_use(rows[0].clave)
-    //rows[0].clave=x
-    rol = { clave: "participante" };
-    c_partic.send(c_partic[0], rol);
+    res.send(c_partic[0]);
   } else {
     if (c_expo.length > 0) {
-      rol = { clave: "expositor" };
-      c_partic.send(c_expo[0], rol);
+      res.send(c_expo[0]);
     } else {
       if (c_control.length > 0) {
-        rol = { clave: "control" };
-        c_partic.send(c_control[0], rol);
+        res.send(c_control[0]);
       }
     }
   }
   if (c_control.length == 0 && c_expo.length == 0 && c_partic.length == 0) {
-    res.send({});
+    return res.send({});
   }
-
-  return res.send({});
-  console.log(rows);
-  //res.send(req.body)
 };
 
 //Consulta un expositor con nick y clave
