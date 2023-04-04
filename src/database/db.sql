@@ -8,7 +8,7 @@ insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) value
 insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (8, 'Ulla', 'Ayris', 'uayris7', 'fZZ610fG', '1994-05-09');
 insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (9, 'Elora', 'Standeven', 'estandeven8', 'QMOdc2', '1937-11-08');
 insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (10, 'Hewitt', 'Giacovazzo', 'hgiacovazzo9', 'mT0bQQ2By6', '1960-08-13');
-insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (11, 'Vina', 'Hulett', 'vhuletta', 'sIl1Ix2amR', '1904-07-24');
+insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (11, 'ControlN', 'ControlA', 'control', '123', '1994-07-24');
 insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (12, 'Wendell', 'Hethron', 'whethronb', 'FVMvYp', '1934-01-06');
 insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (13, 'Hermione', 'Rontree', 'hrontreec', 'mZViuhyfMzJ', '1957-06-13');
 insert into control (ci_control, nombre, apellido, nick, clave, fechanaci) values (14, 'Jedd', 'Suermeiers', 'jsuermeiersd', 'xXKalV96TCm', '1924-05-12');
@@ -76,3 +76,20 @@ insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, e
 insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (23, 'Irv', 'Guilbert', 'Licenciado', 'Augustana University College', 'iguilbertm@bloglovin.com', 'iguilbertm', 'CtGOUKkH5UC', '4092353058', '1960-09-24');
 insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (24, 'Caspar', 'Twiddle', 'Licenciado', 'Universidad la Concordia', 'ctwiddlen@desdev.cn', 'ctwiddlen', 'M6xyfe', '8515832603', '1974-11-06');
 insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (25, 'Otis', 'Molen', 'Magister', 'Pedagogical University of Czestochowa', 'omoleno@booking.com', 'omoleno', 'NczUX0OO83Qp', '4669197328', '1965-08-11');
+
+
+
+INSERT INTO `administrador` (`id_admin`, `nombre`, `ci`, `clave`) VALUES
+(1, 'Felipe Altamirano M', 6723145, '123');
+INSERT INTO `administrador` (`id_admin`, `nombre`, `ci`, `clave`) VALUES
+(2, 'Leonel Lima', 6853618, '123');
+
+
+INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
+('Congreso de Computadoras', 'UMSA', 400, '2023-03-29', '15:00:00', 1);
+INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
+('Tics en la Sociedad', 'UMSA-Paraninfo', 250, '2023-06-15', '15:00:00', 1);
+INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
+('Congreso de Computadoras', 'UMSA', 150, '2023-01-18', '18:00:00', 1);
+INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
+('Congreso de Computadoras', 'UMSA', 200, '2023-09-13', '20:00:00', 1);
