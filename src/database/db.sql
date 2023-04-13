@@ -75,7 +75,8 @@ insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, e
 insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (22, 'Gottfried', 'Weatherdon', 'Licenciado', 'University of Tripoli', 'gweatherdonl@statcounter.com', 'gweatherdonl', 'XgBHf37y', '4054633', '1997-11-03');
 insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (23, 'Irv', 'Guilbert', 'Licenciado', 'Augustana University College', 'iguilbertm@bloglovin.com', 'iguilbertm', 'CtGOUKkH5UC', '4092353058', '1960-09-24');
 insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (24, 'Caspar', 'Twiddle', 'Licenciado', 'Universidad la Concordia', 'ctwiddlen@desdev.cn', 'ctwiddlen', 'M6xyfe', '8515832603', '1974-11-06');
-insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (25, 'Otis', 'Molen', 'Magister', 'Pedagogical University of Czestochowa', 'omoleno@booking.com', 'omoleno', 'NczUX0OO83Qp', '4669197328', '1965-08-11');
+insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (25, 'Otis', 'Molen', 'Magister', 'Pedagogical University of Czestochowa', 'omoleno@booking.com', 'omoleno', 'NczUX0OO83Qp', '4669197328', '1965-08-11'),
+insert into expositor (ci_exp, nombre, apellido, grado_academico, universidad, email, nick, clave, celular, fechanaci) values (26, 'expoN', 'expoA', 'x', 'Y', 'expo@a.com', 'expo', '123', 111112, '1999-08-12');
 
 
 
@@ -84,12 +85,25 @@ INSERT INTO `administrador` (`id_admin`, `nombre`, `ci`, `clave`) VALUES
 INSERT INTO `administrador` (`id_admin`, `nombre`, `ci`, `clave`) VALUES
 (2, 'Leonel Lima', 6853618, '123');
 
+INSERT INTO `evento` (`idevento`, `nombre`, `costo`, `fecha`, `hora_e`, `direccion`) VALUES
+(1,'Congreso de Computadoras', 400, '2023-03-29', '15:00:00', 'UMSA');
+INSERT INTO `evento` (`idevento`, `nombre`, `costo`, `fecha`, `hora_e`, `direccion`) VALUES
+(2,'Tics en la Sociedad', 250, '2023-06-15', '15:00:00', 'UMSA-Paraninfo');
+INSERT INTO `evento` (`idevento`, `nombre`, `costo`, `fecha`, `hora_e`, `direccion`) VALUES
+(3,'Congreso de Computadoras', 150, '2023-01-18', '18:00:00', 'UMSA');
+INSERT INTO `evento` (`idevento`, `nombre`, `costo`, `fecha`, `hora_e`, `direccion`) VALUES
+(4,'Congreso de Computadoras', 200, '2023-09-13', '20:00:00', 'UMSA');
 
-INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
-('Congreso de Computadoras', 'UMSA', 400, '2023-03-29', '15:00:00', 1);
-INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
-('Tics en la Sociedad', 'UMSA-Paraninfo', 250, '2023-06-15', '15:00:00', 1);
-INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
-('Congreso de Computadoras', 'UMSA', 150, '2023-01-18', '18:00:00', 1);
-INSERT INTO `evento` (`idevento`, `nombre`, `direccion`, `costo`, `fecha`, `hora`, `id_admin`) VALUES
-('Congreso de Computadoras', 'UMSA', 200, '2023-09-13', '20:00:00', 1);
+
+
+
+INSERT INTO `administrador` (`id_admin`, `nombre`,`ci`, `clave`) VALUES
+(1, 'felipe',77, '123'),
+(2, 'leonel',78, '123'),
+(3, 'lian',79, '123'),
+(4, 'josue',80, '123'),
+(5, 'Z',81, '123'),
+(6, 'Y',82, '123'),
+(7, 'X',83, '123'),
+(8, 'a',84, 'bbbbbbbb'),
+(9, 'd',85, 'bbbbbbbb');
